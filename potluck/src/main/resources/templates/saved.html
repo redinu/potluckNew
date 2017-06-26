@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmls:th="www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h3>Successfully saved</h3>
+		<p th:text="'Name: ' + ${registry.name}"></p>
+		<p th:text ="'Food: ' + ${registry.food}"/>
+		
+		<a href="/">Register</a>
+		<a href="/list">See List</a>
+	</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<form th:action="save" th:object="${registry}" method="post">
+			Name: <input th:type="text" th:field="*{name}"/>
+			<span th:if="${#fields.hasErrors('name')}" th:errors = "*{name}"></span><br/>
+			Food: <input th:type="text" th:field="*{food}"/>
+			<span th:if="${#fields.hasErrors('food')}" th:errors = "*{food}"></span><br/>
+			<input type="submit" value="Submit"/>
+		</form>
+		
+		<a href="/list">See List</a>
+	</body>
+</html>
