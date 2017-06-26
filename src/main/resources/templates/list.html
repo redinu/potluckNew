@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<p th:if="${list==null}">No Registered Data</p>
+		<table th:if="${list!=null}">
+			<tr>
+				<th>Name</th>
+				<th>Food</th>
+			</tr>
+			<tr th:each="registry: ${list}">
+				<td th:text="${registry.name}"></td>
+				<td th:text="${registry.food}"></td>
+				<td> <form action="/remove" method="post">
+					<input type="hidden" name='id' th:value="${registry.id}"/>
+					<button type="submit" value="submit">Remove</button>
+				</form>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
